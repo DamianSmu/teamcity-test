@@ -17,6 +17,7 @@ pipeline {
                 sh 'sudo rm -r /var/www/html'
                 sh 'sudo mkdir /var/www/html'
                 sh 'sudo cp -r ${WORKSPACE}/build/* /var/www/html/'
+                cleanWs()
             }
         }
     }
