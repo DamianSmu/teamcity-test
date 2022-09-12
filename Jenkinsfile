@@ -14,9 +14,8 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh 'npm build'
-                sh 'npm build'
                 sh 'sudo rm -r /var/www/html/'
-                sh 'sudo cp -r /root/reactapp/build/* /var/www/html/'
+                sh 'sudo cp -r ${WORKSPACE}/build/* /var/www/html/'
             }
         }
     }
